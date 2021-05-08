@@ -39,7 +39,7 @@ int main(int argc, char** argv) {
 
     Matrix3x3 matrixGetForSingleRotation = Matrix3x3();
 
-    double amountOfRotation;
+    int amountOfRotation, amountOfTranslation;
     char c = ' ';
     while(c != 'k'){
         gnu.drawCuboid(gnu.cub);
@@ -61,8 +61,16 @@ int main(int argc, char** argv) {
                 gnu.rotateByAmountOfRotation(amountOfRotation);
                 break;
             case 'p':
+
                 std::cin >> gnu.translation;
-                gnu.animateTranslateRectangle(gnu.cub,gnu.translation);
+                std::cout << "give amount of translation (it has to be positive integer) \n";
+                if(amountOfTranslation <= 0){
+                    throw std::invalid_argument("Incorrect amount of rotation");
+                }
+                std::cin >> amountOfTranslation;
+                for(int z = 0; z < amountOfTranslation; z++){
+                    gnu.animateTranslateRectangle(gnu.cub,gnu.translation);
+                }
                 break;
             case 'w':
                 std::cout << gnu.cub;
