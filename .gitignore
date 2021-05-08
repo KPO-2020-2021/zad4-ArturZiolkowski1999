@@ -1,36 +1,11 @@
-# Prerequisites
-*.d
-
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
+/build/*
+/cmake-build-debug/*
+.vscode*
 *.exe
 *.out
-*.app
 *.x
-
-# Build directory
-build/
+*.lib
+*.mod
+*.d
+*.obj
+*.o
