@@ -122,19 +122,19 @@ void menuDisplay(){
 }
 
 void getRotationMatrix(Cuboid<double> &cub, Matrix3x3 &rotMatrix, scene &gnu){
-    char c;
+    char ch;
     bool fail = false;
     Cuboid<double> animateCuboid = cub;
     Matrix rot = Matrix3x3 ();
     rotMatrix = Matrix3x3();
     double degree;
-    while(c != '.'){
+    while(ch != '.'){
         std::cout << "give axis ann angle in degree\n";
-        if(!(std::cin >> c)){
+        if(!(std::cin >> ch)){
             throw std::exception();
         }
-        if(c == '.') break;
-        switch (c) {
+        if(ch == '.') break;
+        switch (ch) {
             case'x':
                 fail = false;
                 break;
@@ -153,8 +153,8 @@ void getRotationMatrix(Cuboid<double> &cub, Matrix3x3 &rotMatrix, scene &gnu){
             if(!(std::cin >> degree)){
                 throw std::exception();
             }
-            rot = Matrix3x3(degree, c);
-            gnu.animateRotateCuboid(animateCuboid, degree, c);
+            rot = Matrix3x3(degree, ch);
+            gnu.animateRotateCuboid(animateCuboid, degree, ch);
             rotMatrix = rot * rotMatrix;
         }
     }
