@@ -18,12 +18,16 @@ private:
     double ZRange[2];
 
 public:
+    Matrix3x3 rotMatrix = Matrix3x3();
+    Vector<double, 3> translation;
+    Cuboid<double> cub;
     scene();
     scene(std::string _fileName, double _XRange[2], double _YRange[2], double _ZRange[2]);
     void drawCuboid(Cuboid<double> &cub);
     void drawVector(Vector<double, 3> &Vec);
     void animateRotateCuboid(Cuboid<double> &cub, double &degree, char &axis);
     void animateTranslateRectangle(Cuboid<double> &cub, Vector<double, 3> &translation);
+    void rotateByAmountOfRotation(int amountOfRotation);
 };
 
 #endif //ROTATION3D_GNUPLOTDRAWINGS_H

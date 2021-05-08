@@ -2,6 +2,8 @@
 // Created by artur on 4/11/21.
 //
 #include "scene.h"
+#include "../inc/scene.h"
+
 
 scene::scene() {
     GNU.ZmienTrybRys(PzG::TR_3D);
@@ -98,4 +100,14 @@ void scene::animateTranslateRectangle(Cuboid<double> &cub, Vector<double, 3> &tr
     }
     cub.translationByVector(translation);
     drawCuboid(cub);
+}
+
+void scene::rotateByAmountOfRotation(int amountOfRotation) {
+
+    Matrix3x3 matrixGetForSingleRotation = this->rotMatrix;
+    for(int k = 1; k < amountOfRotation; k++){
+        this->rotMatrix = matrixGetForSingleRotation * this->rotMatrix;
+    }
+    this->cub.rotationByMatrix(this->rotMatrix);
+    drawCuboid(this->cub);
 }
