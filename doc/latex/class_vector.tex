@@ -1,0 +1,58 @@
+\hypertarget{class_vector}{}\doxysection{Vector$<$ T, dimension $>$ Class Template Reference}
+\label{class_vector}\index{Vector$<$ T, dimension $>$@{Vector$<$ T, dimension $>$}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_vector_ae4f9fdb60ce4f97ae100758116eabcc0}\label{class_vector_ae4f9fdb60ce4f97ae100758116eabcc0}} 
+{\bfseries Vector} (T \+\_\+x, T \+\_\+y)
+\item 
+\mbox{\Hypertarget{class_vector_a0faf7a4b411065a1457bf13aae587359}\label{class_vector_a0faf7a4b411065a1457bf13aae587359}} 
+{\bfseries Vector} (T \+\_\+x, T \+\_\+y, T \+\_\+z)
+\item 
+\mbox{\Hypertarget{class_vector_ac873f170d40ba50970c888fce790d5b4}\label{class_vector_ac873f170d40ba50970c888fce790d5b4}} 
+const T \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (int index) const
+\item 
+\mbox{\Hypertarget{class_vector_aed81acd134853bba8397f44de782083e}\label{class_vector_aed81acd134853bba8397f44de782083e}} 
+T \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (int index)
+\item 
+\mbox{\Hypertarget{class_vector_aa5d5a51c7b3e9cdccac0d1392c44efff}\label{class_vector_aa5d5a51c7b3e9cdccac0d1392c44efff}} 
+T {\bfseries get\+Length} ()
+\item 
+\mbox{\Hypertarget{class_vector_a6ac1e6e81bf41e401c5d48cb1d7e5268}\label{class_vector_a6ac1e6e81bf41e401c5d48cb1d7e5268}} 
+void {\bfseries setX} (T \+\_\+x)
+\item 
+\mbox{\Hypertarget{class_vector_aa8fe26c573f20d381db5a87f9e94871f}\label{class_vector_aa8fe26c573f20d381db5a87f9e94871f}} 
+void {\bfseries setY} (T \+\_\+y)
+\item 
+\mbox{\Hypertarget{class_vector_af123373d84e27d453d71bdf8d883cc6c}\label{class_vector_af123373d84e27d453d71bdf8d883cc6c}} 
+void {\bfseries setZ} (T \+\_\+z)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_vector_a69b4162fc87e726b06cf6262bd5321e3}\label{class_vector_a69b4162fc87e726b06cf6262bd5321e3}} 
+{\footnotesize template$<$typename T1 , unsigned int dimension1$>$ }\\bool {\bfseries operator==} (const \mbox{\hyperlink{class_vector}{Vector}}$<$ T1, dimension1 $>$ \&Vec1, const \mbox{\hyperlink{class_vector}{Vector}}$<$ T1, dimension1 $>$ \&Vec2)
+\item 
+\mbox{\Hypertarget{class_vector_a52257fb7333d9ef6ac658a546e6c3f82}\label{class_vector_a52257fb7333d9ef6ac658a546e6c3f82}} 
+{\footnotesize template$<$typename T1 , unsigned int dimension1$>$ }\\\mbox{\hyperlink{class_vector}{Vector}}$<$ T1, dimension1 $>$ {\bfseries operator+} (\mbox{\hyperlink{class_vector}{Vector}}$<$ T1, dimension1 $>$ \&Vec1, \mbox{\hyperlink{class_vector}{Vector}}$<$ T1, dimension1 $>$ \&Vec2)
+\item 
+\mbox{\Hypertarget{class_vector_a9295e96ddb70c1810eb02dc7db4d087a}\label{class_vector_a9295e96ddb70c1810eb02dc7db4d087a}} 
+{\footnotesize template$<$typename T1 , unsigned int dimension1$>$ }\\\mbox{\hyperlink{class_vector}{Vector}}$<$ T1, dimension1 $>$ {\bfseries operator-\/} (\mbox{\hyperlink{class_vector}{Vector}}$<$ T1, dimension1 $>$ \&Vec1, \mbox{\hyperlink{class_vector}{Vector}}$<$ T1, dimension1 $>$ \&Vec2)
+\item 
+\mbox{\Hypertarget{class_vector_ad4b3cd66d23af1c13d897a5479b2161d}\label{class_vector_ad4b3cd66d23af1c13d897a5479b2161d}} 
+{\footnotesize template$<$typename T1 , unsigned int dimension1$>$ }\\\mbox{\hyperlink{class_vector}{Vector}}$<$ T1, dimension1 $>$ {\bfseries operator/} (\mbox{\hyperlink{class_vector}{Vector}}$<$ T1, dimension1 $>$ \&Vec, const double \&Num)
+\item 
+\mbox{\Hypertarget{class_vector_af2910a86d9b7a6f1f35d3d9e2e9776d5}\label{class_vector_af2910a86d9b7a6f1f35d3d9e2e9776d5}} 
+{\footnotesize template$<$typename T1 , unsigned int dimension1$>$ }\\\mbox{\hyperlink{class_vector}{Vector}}$<$ T1, dimension1 $>$ {\bfseries operator$\ast$} (\mbox{\hyperlink{class_vector}{Vector}}$<$ T1, dimension1 $>$ \&Vec, const double \&Num)
+\item 
+\mbox{\Hypertarget{class_vector_a061a9d8564c9f50f801347b250456d12}\label{class_vector_a061a9d8564c9f50f801347b250456d12}} 
+{\footnotesize template$<$typename T1 , unsigned int dimension1$>$ }\\std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&ost, const \mbox{\hyperlink{class_vector}{Vector}}$<$ T1, dimension1 $>$ \&Vec)
+\item 
+\mbox{\Hypertarget{class_vector_a4a53137af9a54bbb011b49a52b65b9be}\label{class_vector_a4a53137af9a54bbb011b49a52b65b9be}} 
+{\footnotesize template$<$typename T1 , unsigned int dimension1$>$ }\\std\+::istream \& {\bfseries operator$>$$>$} (std\+::istream \&ist, \mbox{\hyperlink{class_vector}{Vector}}$<$ T, dimension $>$ \&Vec)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/artur/cpp\+\_\+projekty/zad5\+\_\+1-\/\+Artur\+Ziolkowski1999/include/Vector.\+h\end{DoxyCompactItemize}

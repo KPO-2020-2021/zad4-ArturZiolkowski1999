@@ -58,14 +58,7 @@ int main(int argc, char** argv) {
                     throw std::invalid_argument("Incorrect amount of rotation");
                 }
                 std::cin >> amountOfRotation;
-
                 gnu.rotateByAmountOfRotation(amountOfRotation);
-//                matrixGetForSingleRotation = gnu.rotMatrix;
-//                for(int k = 1; k < amountOfRotation; k++){
-//                    gnu.rotMatrix = matrixGetForSingleRotation * gnu.rotMatrix;
-//                }
-//                gnu.cub.rotationByMatrix(gnu.rotMatrix);
-//                gnu.drawCuboid(gnu.cub);
                 break;
             case 'p':
                 std::cin >> gnu.translation;

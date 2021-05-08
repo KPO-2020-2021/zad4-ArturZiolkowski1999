@@ -1,0 +1,71 @@
+\hypertarget{class_cuboid}{}\doxysection{Cuboid$<$ T $>$ Class Template Reference}
+\label{class_cuboid}\index{Cuboid$<$ T $>$@{Cuboid$<$ T $>$}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_cuboid_a4710d0b11db7f61c6c6328cc5c04c963}{Cuboid}} (\mbox{\hyperlink{class_vector}{Vector}}$<$ T, 3 $>$ $\ast$ver)
+\item 
+\mbox{\Hypertarget{class_cuboid_aea9d9af5f79ed044c3df9e60e00c7e37}\label{class_cuboid_aea9d9af5f79ed044c3df9e60e00c7e37}} 
+void {\bfseries translation\+By\+Vector} (\mbox{\hyperlink{class_vector}{Vector}}$<$ T, 3 $>$ \&Vec)
+\item 
+\mbox{\Hypertarget{class_cuboid_aaabbdf6a6e9ae9ed5304838b5da9d8d2}\label{class_cuboid_aaabbdf6a6e9ae9ed5304838b5da9d8d2}} 
+void {\bfseries rotation\+By\+Matrix} (const \mbox{\hyperlink{class_matrix3x3}{Matrix3x3}} \&rot\+Matrix)
+\item 
+\mbox{\Hypertarget{class_cuboid_ab6fb64f6d2f8d6d51b307b94bb325b2b}\label{class_cuboid_ab6fb64f6d2f8d6d51b307b94bb325b2b}} 
+const \mbox{\hyperlink{class_vector}{Vector}}$<$ T, 3 $>$ \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (int index) const
+\item 
+\mbox{\Hypertarget{class_cuboid_ad94bb34c5449bba0f451cc0df93b934f}\label{class_cuboid_ad94bb34c5449bba0f451cc0df93b934f}} 
+\mbox{\hyperlink{class_vector}{Vector}}$<$ T, 3 $>$ \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (int index)
+\item 
+T \mbox{\hyperlink{class_cuboid_af6eaf58088a0157604ee486df56743e5}{get\+Side\+Length}} (unsigned int index)
+\item 
+void \mbox{\hyperlink{class_cuboid_aaa135c1ac8a7177c3d657a6ac8dbd9c3}{calculate\+Sides\+Length}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_cuboid_a158174cb75b87449053ff411022ce06c}\label{class_cuboid_a158174cb75b87449053ff411022ce06c}} 
+{\footnotesize template$<$typename T1 $>$ }\\bool {\bfseries operator==} (const \mbox{\hyperlink{class_cuboid}{Cuboid}}$<$ T1 $>$ \&cub1, const \mbox{\hyperlink{class_cuboid}{Cuboid}}$<$ T1 $>$ \&cub2)
+\item 
+\mbox{\Hypertarget{class_cuboid_ae6863ef5e63a6760424b257d72667c60}\label{class_cuboid_ae6863ef5e63a6760424b257d72667c60}} 
+{\footnotesize template$<$typename T1 $>$ }\\std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&ost, \mbox{\hyperlink{class_cuboid}{Cuboid}}$<$ T1 $>$ \&cub)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_cuboid_a4710d0b11db7f61c6c6328cc5c04c963}\label{class_cuboid_a4710d0b11db7f61c6c6328cc5c04c963}} 
+\index{Cuboid$<$ T $>$@{Cuboid$<$ T $>$}!Cuboid@{Cuboid}}
+\index{Cuboid@{Cuboid}!Cuboid$<$ T $>$@{Cuboid$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Cuboid()}{Cuboid()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_cuboid}{Cuboid}}$<$ T $>$\+::\mbox{\hyperlink{class_cuboid}{Cuboid}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector}{Vector}}$<$ T, 3 $>$ $\ast$}]{ver }\end{DoxyParamCaption})}
+
+/brief created cuboid has patern
+
+
+\begin{DoxyParams}{Parameters}
+{\em ver} & // V\+E\+R\+T\+I\+C\+E\+S\+\_\+\+N\+U\+M\+B\+ER have to be equal 8; there is no sort of vertices Front $\vert$ Back $<$-\/ vertices number 3 2 $\vert$ 7 6 0 1 $\vert$ 4 5 \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_cuboid_aaa135c1ac8a7177c3d657a6ac8dbd9c3}\label{class_cuboid_aaa135c1ac8a7177c3d657a6ac8dbd9c3}} 
+\index{Cuboid$<$ T $>$@{Cuboid$<$ T $>$}!calculateSidesLength@{calculateSidesLength}}
+\index{calculateSidesLength@{calculateSidesLength}!Cuboid$<$ T $>$@{Cuboid$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{calculateSidesLength()}{calculateSidesLength()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_cuboid}{Cuboid}}$<$ T $>$\+::calculate\+Sides\+Length}
+
+/brief calculate side Length in this patern sides 0 -\/ 3 one group , 4-\/7 second group 8-\/11 last group of sides \mbox{\Hypertarget{class_cuboid_af6eaf58088a0157604ee486df56743e5}\label{class_cuboid_af6eaf58088a0157604ee486df56743e5}} 
+\index{Cuboid$<$ T $>$@{Cuboid$<$ T $>$}!getSideLength@{getSideLength}}
+\index{getSideLength@{getSideLength}!Cuboid$<$ T $>$@{Cuboid$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getSideLength()}{getSideLength()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{class_cuboid}{Cuboid}}$<$ T $>$\+::get\+Side\+Length (\begin{DoxyParamCaption}\item[{unsigned int}]{index }\end{DoxyParamCaption})}
+
+/brief get one of calculeted earlier side length 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/artur/cpp\+\_\+projekty/zad5\+\_\+1-\/\+Artur\+Ziolkowski1999/include/Cuboid.\+h\end{DoxyCompactItemize}
