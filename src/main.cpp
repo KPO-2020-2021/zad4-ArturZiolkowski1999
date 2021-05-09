@@ -172,10 +172,8 @@ void getRotationMatrix(scene &gnu){
             if(!(std::cin >> degree)){
                 throw std::exception();
             }
-            rot = Matrix3x3(degree, ch);
+            // this method downstairs actualize cuboid and actualize rotMatrix
             gnu.animateRotateCuboid(degree, ch);
-            gnu.rotMatrix = rot * gnu.rotMatrix;
-
         }
     }
     gnu.cub[gnu.chosenIndex] = oldCuboid;

@@ -82,6 +82,7 @@ void scene::drawScene(){
 void scene::animateRotateCuboid( double &degree, char &axis) {
     Cuboid<double> oldCub = this->cub[this->chosenIndex];
     Matrix3x3 rotMatrix = Matrix3x3();
+    Matrix3x3 oldMatrix = this->rotMatrix;
     double singleDegree = 0;
     while (std::abs(singleDegree) < std::abs(degree)){
         singleDegree += 2;
@@ -98,6 +99,7 @@ void scene::animateRotateCuboid( double &degree, char &axis) {
     this->cub[this->chosenIndex] = oldCub;
     this->rotMatrix = Matrix3x3(degree, axis);
     this->cub[this->chosenIndex].rotationByMatrix(this->rotMatrix);
+    this->rotMatrix = this->rotMatrix * oldMatrix;
     drawScene();
 }
 
@@ -124,7 +126,7 @@ void scene::animateTranslateRectangle() {
 void scene::rotateByAmountOfRotation(int amountOfRotation) {
 
     Matrix3x3 matrixGetForSingleRotation = this->rotMatrix;
-    for(int k = 1; k < amountOfRotation; k++){
+    for(int k = 1; k < amountOfRotation; ++k){
         this->rotMatrix = matrixGetForSingleRotation * this->rotMatrix;
     }
     this->cub[this->chosenIndex].rotationByMatrix(this->rotMatrix);
