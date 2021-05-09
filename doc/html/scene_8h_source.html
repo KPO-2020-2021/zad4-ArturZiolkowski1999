@@ -82,33 +82,32 @@ $(function() {
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
 <div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classscene.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="classscene.html">scene</a>{</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    std::string fileName;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    std::string fileName[5];</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    PzG::LaczeDoGNUPlota GNU;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">double</span> XRange[2];</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">double</span> YRange[2];</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">double</span> ZRange[2];</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="class_matrix3x3.html">Matrix3x3</a> rotMatrix = <a class="code" href="class_matrix3x3.html">Matrix3x3</a>();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="class_vector.html">Vector&lt;double, 3&gt;</a> translation;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="class_cuboid.html">Cuboid&lt;double&gt;</a> cub;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="classscene.html">scene</a>();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classscene.html">scene</a>(std::string _fileName, <span class="keywordtype">double</span> _XRange[2], <span class="keywordtype">double</span> _YRange[2], <span class="keywordtype">double</span> _ZRange[2]);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classscene.html#a3af7436842c967f1fcccabfa94a4fd46">drawScene</a>(<a class="code" href="class_cuboid.html">Cuboid&lt;double&gt;</a> &amp;cub);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> drawVector(<a class="code" href="class_vector.html">Vector&lt;double, 3&gt;</a> &amp;Vec);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classscene.html#a9e4c46d79af45b0591954ec386cacf55">animateRotateCuboid</a>(<a class="code" href="class_cuboid.html">Cuboid&lt;double&gt;</a> &amp;cub, <span class="keywordtype">double</span> &amp;degree, <span class="keywordtype">char</span> &amp;axis);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classscene.html#a3ffda466cd0800e999d87f2fddd54aca">animateTranslateRectangle</a>(<a class="code" href="class_cuboid.html">Cuboid&lt;double&gt;</a> &amp;cub, <a class="code" href="class_vector.html">Vector&lt;double, 3&gt;</a> &amp;translation);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classscene.html#a2ce13e90c037f174f9435afca111cbb9">rotateByAmountOfRotation</a>(<span class="keywordtype">int</span> amountOfRotation);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif //ROTATION3D_GNUPLOTDRAWINGS_H</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">int</span> chosenIndex;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="class_matrix3x3.html">Matrix3x3</a> rotMatrix = <a class="code" href="class_matrix3x3.html">Matrix3x3</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="class_vector.html">Vector&lt;double, 3&gt;</a> translation;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="class_cuboid.html">Cuboid&lt;double&gt;</a> cub[5];</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classscene.html">scene</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classscene.html">scene</a>(<span class="keywordtype">double</span> _XRange[2], <span class="keywordtype">double</span> _YRange[2], <span class="keywordtype">double</span> _ZRange[2]);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classscene.html#aaca71582ae17b7c6b108b52a5176b79b">drawScene</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> animateRotateCuboid(<span class="keywordtype">double</span> &amp;degree, <span class="keywordtype">char</span> &amp;axis);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classscene.html#a1654edb1e747f3630708953e8c42da78">animateTranslateRectangle</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classscene.html#a2ce13e90c037f174f9435afca111cbb9">rotateByAmountOfRotation</a>(<span class="keywordtype">int</span> amountOfRotation);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;};</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif //ROTATION3D_GNUPLOTDRAWINGS_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassscene_html_a2ce13e90c037f174f9435afca111cbb9"><div class="ttname"><a href="classscene.html#a2ce13e90c037f174f9435afca111cbb9">scene::rotateByAmountOfRotation</a></div><div class="ttdeci">void rotateByAmountOfRotation(int amountOfRotation)</div><div class="ttdef"><b>Definition:</b> scene.cpp:105</div></div>
+<div class="ttc" id="aclassscene_html_a2ce13e90c037f174f9435afca111cbb9"><div class="ttname"><a href="classscene.html#a2ce13e90c037f174f9435afca111cbb9">scene::rotateByAmountOfRotation</a></div><div class="ttdeci">void rotateByAmountOfRotation(int amountOfRotation)</div><div class="ttdef"><b>Definition:</b> scene.cpp:124</div></div>
 <div class="ttc" id="aclass_matrix3x3_html"><div class="ttname"><a href="class_matrix3x3.html">Matrix3x3</a></div><div class="ttdef"><b>Definition:</b> Matrix3x3.h:9</div></div>
-<div class="ttc" id="aclassscene_html_a3af7436842c967f1fcccabfa94a4fd46"><div class="ttname"><a href="classscene.html#a3af7436842c967f1fcccabfa94a4fd46">scene::drawScene</a></div><div class="ttdeci">void drawScene(Cuboid&lt; double &gt; &amp;cub)</div><div class="ttdef"><b>Definition:</b> scene.cpp:38</div></div>
-<div class="ttc" id="aclassscene_html_a3ffda466cd0800e999d87f2fddd54aca"><div class="ttname"><a href="classscene.html#a3ffda466cd0800e999d87f2fddd54aca">scene::animateTranslateRectangle</a></div><div class="ttdeci">void animateTranslateRectangle(Cuboid&lt; double &gt; &amp;cub, Vector&lt; double, 3 &gt; &amp;translation)</div><div class="ttdef"><b>Definition:</b> scene.cpp:86</div></div>
+<div class="ttc" id="aclassscene_html_a1654edb1e747f3630708953e8c42da78"><div class="ttname"><a href="classscene.html#a1654edb1e747f3630708953e8c42da78">scene::animateTranslateRectangle</a></div><div class="ttdeci">void animateTranslateRectangle()</div><div class="ttdef"><b>Definition:</b> scene.cpp:104</div></div>
+<div class="ttc" id="aclassscene_html_aaca71582ae17b7c6b108b52a5176b79b"><div class="ttname"><a href="classscene.html#aaca71582ae17b7c6b108b52a5176b79b">scene::drawScene</a></div><div class="ttdeci">void drawScene()</div><div class="ttdef"><b>Definition:</b> scene.cpp:64</div></div>
 <div class="ttc" id="aclass_vector_html"><div class="ttname"><a href="class_vector.html">Vector&lt; double, 3 &gt;</a></div></div>
-<div class="ttc" id="aclassscene_html_a9e4c46d79af45b0591954ec386cacf55"><div class="ttname"><a href="classscene.html#a9e4c46d79af45b0591954ec386cacf55">scene::animateRotateCuboid</a></div><div class="ttdeci">void animateRotateCuboid(Cuboid&lt; double &gt; &amp;cub, double &amp;degree, char &amp;axis)</div><div class="ttdef"><b>Definition:</b> scene.cpp:65</div></div>
 <div class="ttc" id="aclass_cuboid_html"><div class="ttname"><a href="class_cuboid.html">Cuboid&lt; double &gt;</a></div></div>
 <div class="ttc" id="aclassscene_html"><div class="ttname"><a href="classscene.html">scene</a></div><div class="ttdef"><b>Definition:</b> scene.h:12</div></div>
 <!-- start footer part -->

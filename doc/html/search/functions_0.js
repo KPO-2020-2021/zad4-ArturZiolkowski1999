@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['animaterotatecuboid_32',['animateRotateCuboid',['../classscene.html#a9e4c46d79af45b0591954ec386cacf55',1,'scene']]],
-  ['animatetranslaterectangle_33',['animateTranslateRectangle',['../classscene.html#a3ffda466cd0800e999d87f2fddd54aca',1,'scene']]]
+  ['animatetranslaterectangle_31',['animateTranslateRectangle',['../classscene.html#a1654edb1e747f3630708953e8c42da78',1,'scene']]]
 ];

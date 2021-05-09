@@ -3,22 +3,23 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classscene_ae55c50bbe65f8da596281deb301d8410}\label{classscene_ae55c50bbe65f8da596281deb301d8410}} 
-{\bfseries scene} (std\+::string \+\_\+file\+Name, double \+\_\+\+X\+Range\mbox{[}2\mbox{]}, double \+\_\+\+Y\+Range\mbox{[}2\mbox{]}, double \+\_\+\+Z\+Range\mbox{[}2\mbox{]})
+\mbox{\Hypertarget{classscene_a2d4caa33946da6524ac0ae1cba80093a}\label{classscene_a2d4caa33946da6524ac0ae1cba80093a}} 
+{\bfseries scene} (double \+\_\+\+X\+Range\mbox{[}2\mbox{]}, double \+\_\+\+Y\+Range\mbox{[}2\mbox{]}, double \+\_\+\+Z\+Range\mbox{[}2\mbox{]})
 \item 
-void \mbox{\hyperlink{classscene_a3af7436842c967f1fcccabfa94a4fd46}{draw\+Cuboid}} (\mbox{\hyperlink{class_cuboid}{Cuboid}}$<$ double $>$ \&cub)
+void \mbox{\hyperlink{classscene_aaca71582ae17b7c6b108b52a5176b79b}{draw\+Scene}} ()
 \item 
-\mbox{\Hypertarget{classscene_a085ac38cbf406b39215b88dd01999c9d}\label{classscene_a085ac38cbf406b39215b88dd01999c9d}} 
-void {\bfseries draw\+Vector} (\mbox{\hyperlink{class_vector}{Vector}}$<$ double, 3 $>$ \&Vec)
+\mbox{\Hypertarget{classscene_a307e5885bd00e2ffeca8027b75a6f765}\label{classscene_a307e5885bd00e2ffeca8027b75a6f765}} 
+void {\bfseries animate\+Rotate\+Cuboid} (double \&degree, char \&axis)
 \item 
-void \mbox{\hyperlink{classscene_a9e4c46d79af45b0591954ec386cacf55}{animate\+Rotate\+Cuboid}} (\mbox{\hyperlink{class_cuboid}{Cuboid}}$<$ double $>$ \&cub, double \&degree, char \&axis)
-\item 
-void \mbox{\hyperlink{classscene_a3ffda466cd0800e999d87f2fddd54aca}{animate\+Translate\+Rectangle}} (\mbox{\hyperlink{class_cuboid}{Cuboid}}$<$ double $>$ \&cub, \mbox{\hyperlink{class_vector}{Vector}}$<$ double, 3 $>$ \&translation)
+void \mbox{\hyperlink{classscene_a1654edb1e747f3630708953e8c42da78}{animate\+Translate\+Rectangle}} ()
 \item 
 void \mbox{\hyperlink{classscene_a2ce13e90c037f174f9435afca111cbb9}{rotate\+By\+Amount\+Of\+Rotation}} (int amount\+Of\+Rotation)
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classscene_ad59852b48899bdc53af07f92b1d8a0b3}\label{classscene_ad59852b48899bdc53af07f92b1d8a0b3}} 
+int {\bfseries chosen\+Index}
 \item 
 \mbox{\Hypertarget{classscene_a9c35f78781530332709ac35b7759d105}\label{classscene_a9c35f78781530332709ac35b7759d105}} 
 \mbox{\hyperlink{class_matrix3x3}{Matrix3x3}} {\bfseries rot\+Matrix} = \mbox{\hyperlink{class_matrix3x3}{Matrix3x3}}()
@@ -26,29 +27,23 @@ void \mbox{\hyperlink{classscene_a2ce13e90c037f174f9435afca111cbb9}{rotate\+By\+
 \mbox{\Hypertarget{classscene_a9a77c6062ada548f46035d7ceb892080}\label{classscene_a9a77c6062ada548f46035d7ceb892080}} 
 \mbox{\hyperlink{class_vector}{Vector}}$<$ double, 3 $>$ {\bfseries translation}
 \item 
-\mbox{\Hypertarget{classscene_a90c43fcc5c399dd0d0958c579349bda2}\label{classscene_a90c43fcc5c399dd0d0958c579349bda2}} 
-\mbox{\hyperlink{class_cuboid}{Cuboid}}$<$ double $>$ {\bfseries cub}
+\mbox{\Hypertarget{classscene_ad2148f540aac1afdd284d2e64f3d8e44}\label{classscene_ad2148f540aac1afdd284d2e64f3d8e44}} 
+\mbox{\hyperlink{class_cuboid}{Cuboid}}$<$ double $>$ {\bfseries cub} \mbox{[}5\mbox{]}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classscene_a9e4c46d79af45b0591954ec386cacf55}\label{classscene_a9e4c46d79af45b0591954ec386cacf55}} 
-\index{scene@{scene}!animateRotateCuboid@{animateRotateCuboid}}
-\index{animateRotateCuboid@{animateRotateCuboid}!scene@{scene}}
-\doxysubsubsection{\texorpdfstring{animateRotateCuboid()}{animateRotateCuboid()}}
-{\footnotesize\ttfamily void scene\+::animate\+Rotate\+Cuboid (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_cuboid}{Cuboid}}$<$ double $>$ \&}]{cub,  }\item[{double \&}]{degree,  }\item[{char \&}]{axis }\end{DoxyParamCaption})}
-
-/brief drawing animating cuboid rotation using lacze do gnuplota \mbox{\Hypertarget{classscene_a3ffda466cd0800e999d87f2fddd54aca}\label{classscene_a3ffda466cd0800e999d87f2fddd54aca}} 
+\mbox{\Hypertarget{classscene_a1654edb1e747f3630708953e8c42da78}\label{classscene_a1654edb1e747f3630708953e8c42da78}} 
 \index{scene@{scene}!animateTranslateRectangle@{animateTranslateRectangle}}
 \index{animateTranslateRectangle@{animateTranslateRectangle}!scene@{scene}}
 \doxysubsubsection{\texorpdfstring{animateTranslateRectangle()}{animateTranslateRectangle()}}
-{\footnotesize\ttfamily void scene\+::animate\+Translate\+Rectangle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_cuboid}{Cuboid}}$<$ double $>$ \&}]{cub,  }\item[{\mbox{\hyperlink{class_vector}{Vector}}$<$ double, 3 $>$ \&}]{translation }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void scene\+::animate\+Translate\+Rectangle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-/brief drawing animating cuboidtranslation using lacze do gnuplota \mbox{\Hypertarget{classscene_a3af7436842c967f1fcccabfa94a4fd46}\label{classscene_a3af7436842c967f1fcccabfa94a4fd46}} 
-\index{scene@{scene}!drawCuboid@{drawCuboid}}
-\index{drawCuboid@{drawCuboid}!scene@{scene}}
-\doxysubsubsection{\texorpdfstring{drawCuboid()}{drawScene()}}
-{\footnotesize\ttfamily void scene\+::draw\+Cuboid (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_cuboid}{Cuboid}}$<$ double $>$ \&}]{cub }\end{DoxyParamCaption})}
+/brief drawing animating cuboidtranslation using lacze do gnuplota \mbox{\Hypertarget{classscene_aaca71582ae17b7c6b108b52a5176b79b}\label{classscene_aaca71582ae17b7c6b108b52a5176b79b}} 
+\index{scene@{scene}!drawScene@{drawScene}}
+\index{drawScene@{drawScene}!scene@{scene}}
+\doxysubsubsection{\texorpdfstring{drawScene()}{drawScene()}}
+{\footnotesize\ttfamily void scene\+::draw\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 /brief drawing simple cuboid using lacze do gnuplota \mbox{\Hypertarget{classscene_a2ce13e90c037f174f9435afca111cbb9}\label{classscene_a2ce13e90c037f174f9435afca111cbb9}} 
 \index{scene@{scene}!rotateByAmountOfRotation@{rotateByAmountOfRotation}}

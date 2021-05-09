@@ -72,71 +72,37 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae55c50bbe65f8da596281deb301d8410"><td class="memItemLeft" align="right" valign="top"><a id="ae55c50bbe65f8da596281deb301d8410"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>scene</b> (std::string _fileName, double _XRange[2], double _YRange[2], double _ZRange[2])</td></tr>
-<tr class="separator:ae55c50bbe65f8da596281deb301d8410"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3af7436842c967f1fcccabfa94a4fd46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscene.html#a3af7436842c967f1fcccabfa94a4fd46">drawScene</a> (<a class="el" href="class_cuboid.html">Cuboid</a>&lt; double &gt; &amp;cub)</td></tr>
-<tr class="separator:a3af7436842c967f1fcccabfa94a4fd46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a085ac38cbf406b39215b88dd01999c9d"><td class="memItemLeft" align="right" valign="top"><a id="a085ac38cbf406b39215b88dd01999c9d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>drawVector</b> (<a class="el" href="class_vector.html">Vector</a>&lt; double, 3 &gt; &amp;Vec)</td></tr>
-<tr class="separator:a085ac38cbf406b39215b88dd01999c9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e4c46d79af45b0591954ec386cacf55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscene.html#a9e4c46d79af45b0591954ec386cacf55">animateRotateCuboid</a> (<a class="el" href="class_cuboid.html">Cuboid</a>&lt; double &gt; &amp;cub, double &amp;degree, char &amp;axis)</td></tr>
-<tr class="separator:a9e4c46d79af45b0591954ec386cacf55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ffda466cd0800e999d87f2fddd54aca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscene.html#a3ffda466cd0800e999d87f2fddd54aca">animateTranslateRectangle</a> (<a class="el" href="class_cuboid.html">Cuboid</a>&lt; double &gt; &amp;cub, <a class="el" href="class_vector.html">Vector</a>&lt; double, 3 &gt; &amp;translation)</td></tr>
-<tr class="separator:a3ffda466cd0800e999d87f2fddd54aca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d4caa33946da6524ac0ae1cba80093a"><td class="memItemLeft" align="right" valign="top"><a id="a2d4caa33946da6524ac0ae1cba80093a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>scene</b> (double _XRange[2], double _YRange[2], double _ZRange[2])</td></tr>
+<tr class="separator:a2d4caa33946da6524ac0ae1cba80093a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaca71582ae17b7c6b108b52a5176b79b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscene.html#aaca71582ae17b7c6b108b52a5176b79b">drawScene</a> ()</td></tr>
+<tr class="separator:aaca71582ae17b7c6b108b52a5176b79b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a307e5885bd00e2ffeca8027b75a6f765"><td class="memItemLeft" align="right" valign="top"><a id="a307e5885bd00e2ffeca8027b75a6f765"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>animateRotateCuboid</b> (double &amp;degree, char &amp;axis)</td></tr>
+<tr class="separator:a307e5885bd00e2ffeca8027b75a6f765"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1654edb1e747f3630708953e8c42da78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscene.html#a1654edb1e747f3630708953e8c42da78">animateTranslateRectangle</a> ()</td></tr>
+<tr class="separator:a1654edb1e747f3630708953e8c42da78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ce13e90c037f174f9435afca111cbb9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscene.html#a2ce13e90c037f174f9435afca111cbb9">rotateByAmountOfRotation</a> (int amountOfRotation)</td></tr>
 <tr class="separator:a2ce13e90c037f174f9435afca111cbb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
+<tr class="memitem:ad59852b48899bdc53af07f92b1d8a0b3"><td class="memItemLeft" align="right" valign="top"><a id="ad59852b48899bdc53af07f92b1d8a0b3"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>chosenIndex</b></td></tr>
+<tr class="separator:ad59852b48899bdc53af07f92b1d8a0b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c35f78781530332709ac35b7759d105"><td class="memItemLeft" align="right" valign="top"><a id="a9c35f78781530332709ac35b7759d105"></a>
 <a class="el" href="class_matrix3x3.html">Matrix3x3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>rotMatrix</b> = <a class="el" href="class_matrix3x3.html">Matrix3x3</a>()</td></tr>
 <tr class="separator:a9c35f78781530332709ac35b7759d105"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a77c6062ada548f46035d7ceb892080"><td class="memItemLeft" align="right" valign="top"><a id="a9a77c6062ada548f46035d7ceb892080"></a>
 <a class="el" href="class_vector.html">Vector</a>&lt; double, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>translation</b></td></tr>
 <tr class="separator:a9a77c6062ada548f46035d7ceb892080"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90c43fcc5c399dd0d0958c579349bda2"><td class="memItemLeft" align="right" valign="top"><a id="a90c43fcc5c399dd0d0958c579349bda2"></a>
-<a class="el" href="class_cuboid.html">Cuboid</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>cub</b></td></tr>
-<tr class="separator:a90c43fcc5c399dd0d0958c579349bda2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2148f540aac1afdd284d2e64f3d8e44"><td class="memItemLeft" align="right" valign="top"><a id="ad2148f540aac1afdd284d2e64f3d8e44"></a>
+<a class="el" href="class_cuboid.html">Cuboid</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>cub</b> [5]</td></tr>
+<tr class="separator:ad2148f540aac1afdd284d2e64f3d8e44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a9e4c46d79af45b0591954ec386cacf55"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e4c46d79af45b0591954ec386cacf55">&#9670;&nbsp;</a></span>animateRotateCuboid()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void scene::animateRotateCuboid </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_cuboid.html">Cuboid</a>&lt; double &gt; &amp;&#160;</td>
-          <td class="paramname"><em>cub</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double &amp;&#160;</td>
-          <td class="paramname"><em>degree</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char &amp;&#160;</td>
-          <td class="paramname"><em>axis</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>/brief drawing animating cuboid rotation using lacze do gnuplota </p>
-
-</div>
-</div>
-<a id="a3ffda466cd0800e999d87f2fddd54aca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ffda466cd0800e999d87f2fddd54aca">&#9670;&nbsp;</a></span>animateTranslateRectangle()</h2>
+<a id="a1654edb1e747f3630708953e8c42da78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1654edb1e747f3630708953e8c42da78">&#9670;&nbsp;</a></span>animateTranslateRectangle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -144,19 +110,8 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">void scene::animateTranslateRectangle </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_cuboid.html">Cuboid</a>&lt; double &gt; &amp;&#160;</td>
-          <td class="paramname"><em>cub</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_vector.html">Vector</a>&lt; double, 3 &gt; &amp;&#160;</td>
-          <td class="paramname"><em>translation</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -164,8 +119,8 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a3af7436842c967f1fcccabfa94a4fd46"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3af7436842c967f1fcccabfa94a4fd46">&#9670;&nbsp;</a></span>drawScene()</h2>
+<a id="aaca71582ae17b7c6b108b52a5176b79b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaca71582ae17b7c6b108b52a5176b79b">&#9670;&nbsp;</a></span>drawScene()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -173,8 +128,7 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">void scene::drawScene </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_cuboid.html">Cuboid</a>&lt; double &gt; &amp;&#160;</td>
-          <td class="paramname"><em>cub</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
