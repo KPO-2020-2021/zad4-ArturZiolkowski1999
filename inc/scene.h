@@ -11,22 +11,22 @@
 
 class scene{
 private:
-    std::string fileName;
+    std::string fileName[5];
     PzG::LaczeDoGNUPlota GNU;
     double XRange[2];
     double YRange[2];
     double ZRange[2];
 
 public:
+    int chosenIndex;
     Matrix3x3 rotMatrix = Matrix3x3();
     Vector<double, 3> translation;
-    Cuboid<double> cub;
+    Cuboid<double> cub[5];
     scene();
-    scene(std::string _fileName, double _XRange[2], double _YRange[2], double _ZRange[2]);
-    void drawCuboid(Cuboid<double> &cub);
-    void drawVector(Vector<double, 3> &Vec);
-    void animateRotateCuboid(Cuboid<double> &cub, double &degree, char &axis);
-    void animateTranslateRectangle(Cuboid<double> &cub, Vector<double, 3> &translation);
+    scene(double _XRange[2], double _YRange[2], double _ZRange[2]);
+    void drawScene();
+    void animateRotateCuboid(double &degree, char &axis);
+    void animateTranslateRectangle();
     void rotateByAmountOfRotation(int amountOfRotation);
 };
 

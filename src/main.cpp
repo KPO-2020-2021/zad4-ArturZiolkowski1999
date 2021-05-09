@@ -10,30 +10,47 @@
 
 
 void menuDisplay();
-void getRotationMatrix(Cuboid<double> &cub, Matrix3x3 &rotMatrix, scene &gnu);
+void getRotationMatrix(scene &gnu);
+void chooseIndex(scene &gnu);
 
 int main(int argc, char** argv) {
     /* Initialize Cuboid and translation vector and axis*/
-    Vector Ver0 = Vector(0,1,1);
-    Vector Ver1 = Vector(5,1,1);
-    Vector Ver2 = Vector(5,1,4);
-    Vector Ver3 = Vector(0,1,4);
+    Vector Ver0 = Vector(0,1,1); Vector Ver1 = Vector(5,1,1);
+    Vector Ver2 = Vector(5,1,4); Vector Ver3 = Vector(0,1,4);
 
-    Vector Ver4 = Vector(0,9,1);
-    Vector Ver5 = Vector(5,9,1);
-    Vector Ver6 = Vector(5,9,4);
-    Vector Ver7 = Vector(0,9,4);
+    Vector Ver4 = Vector(0,3,1); Vector Ver5 = Vector(5,3,1);
+    Vector Ver6 = Vector(5,3,4); Vector Ver7 = Vector(0,3,4);
+
+    Vector tr1 = Vector(-5,-5,-5); Vector tr2 = Vector(5,-5,-5);
+    Vector tr3 = Vector(5,5,-5); Vector tr4 = Vector(5,5,5);
 
     Vector vertices[VERTICES_NUMBER] = {Ver0, Ver1, Ver2, Ver3, Ver4, Ver5, Ver6, Ver7};
 
+    Vector vertices1[VERTICES_NUMBER] = {Ver0 + tr1, Ver1+ tr1, Ver2+ tr1, Ver3+ tr1,
+                                        Ver4+ tr1, Ver5+ tr1, Ver6+ tr1, Ver7+ tr1};
+
+    Vector vertices2[VERTICES_NUMBER] = {Ver0 + tr2, Ver1+ tr2, Ver2+ tr2, Ver3+ tr2,
+                                        Ver4+ tr2, Ver5+ tr2, Ver6+ tr2, Ver7+ tr2};
+
+    Vector vertices3[VERTICES_NUMBER] = {Ver0 + tr3, Ver1+ tr3, Ver2+ tr3, Ver3+ tr3,
+                                        Ver4+ tr3, Ver5+ tr3, Ver6+ tr3, Ver7+ tr3};
+
+    Vector vertices4[VERTICES_NUMBER] = {Ver0 + tr4, Ver1+ tr4, Ver2+ tr4, Ver3+ tr4,
+                                        Ver4+ tr4, Ver5+ tr4, Ver6+ tr4, Ver7+ tr4};
+
+
     char axis;
     /* Initialize "Lacze do gnuplota" to work with in class scene*/
-    std ::string file ="../data/data.txt";
     double XRange[2] = {-15, 15};
     double YRange[2] = {-15, 15};
     double ZRange[2] = {-15, 15};
-    scene gnu = scene(file, XRange, YRange, ZRange);
-    gnu.cub = Cuboid<double>(vertices);
+    scene gnu = scene(XRange, YRange, ZRange);
+    gnu.cub[0] = Cuboid<double>(vertices);
+    gnu.cub[1] = Cuboid<double>(vertices1);
+    gnu.cub[2] = Cuboid<double>(vertices2);
+    gnu.cub[3] = Cuboid<double>(vertices3);
+    gnu.cub[4] = Cuboid<double>(vertices4);
+
     /* Drawing initial rectangle and display menu*/
     menuDisplay();
 
@@ -42,7 +59,7 @@ int main(int argc, char** argv) {
     int amountOfRotation, amountOfTranslation;
     char c = ' ';
     while(c != 'k'){
-        gnu.drawCuboid(gnu.cub);
+        gnu.drawScene();
         if(!(std::cin >> c)){
             throw std::exception();
         }
@@ -51,29 +68,31 @@ int main(int argc, char** argv) {
                 menuDisplay();
                 break;
             case 'o':
+                chooseIndex(gnu);
                 gnu.rotMatrix = Matrix3x3();
-                getRotationMatrix(gnu.cub, gnu.rotMatrix, gnu);
+                getRotationMatrix(gnu);
                 std::cout << "give amount of rotation (it has to be positive integer) \n";
+                std::cin >> amountOfRotation;
                 if(amountOfRotation <= 0){
                     throw std::invalid_argument("Incorrect amount of rotation");
                 }
-                std::cin >> amountOfRotation;
                 gnu.rotateByAmountOfRotation(amountOfRotation);
                 break;
             case 'p':
-
+                chooseIndex(gnu);
                 std::cin >> gnu.translation;
                 std::cout << "give amount of translation (it has to be positive integer) \n";
+                std::cin >> amountOfTranslation;
                 if(amountOfTranslation <= 0){
                     throw std::invalid_argument("Incorrect amount of rotation");
                 }
-                std::cin >> amountOfTranslation;
                 for(int z = 0; z < amountOfTranslation; z++){
-                    gnu.animateTranslateRectangle(gnu.cub,gnu.translation);
+                    gnu.animateTranslateRectangle();
                 }
                 break;
             case 'w':
-                std::cout << gnu.cub;
+                chooseIndex(gnu);
+                std::cout << gnu.cub[gnu.chosenIndex];
                 break;
             case 'r':
                 std::cout << gnu.rotMatrix;
@@ -81,33 +100,32 @@ int main(int argc, char** argv) {
             case 'k':
                 break;
             case 't':
-                gnu.cub.rotationByMatrix(gnu.rotMatrix);
-                gnu.drawCuboid(gnu.cub);
+                gnu.cub[gnu.chosenIndex].rotationByMatrix(gnu.rotMatrix);
+                gnu.drawScene();
                 break;
             case 'l':
-                gnu.cub.calculateSidesLength();
-                std::cout << "first sides: " << gnu.cub.getSideLength(0) << std::endl;
-                std::cout << "first sides: " << gnu.cub.getSideLength(1) << std::endl;
-                std::cout << "first sides: " << gnu.cub.getSideLength(2) << std::endl;
-                std::cout << "first sides: " << gnu.cub.getSideLength(3) << std::endl;
+                chooseIndex(gnu);
+                gnu.cub[gnu.chosenIndex].calculateSidesLength();
+                std::cout << "first sides: " << gnu.cub[gnu.chosenIndex].getSideLength(0) << std::endl;
+                std::cout << "first sides: " << gnu.cub[gnu.chosenIndex].getSideLength(1) << std::endl;
+                std::cout << "first sides: " << gnu.cub[gnu.chosenIndex].getSideLength(2) << std::endl;
+                std::cout << "first sides: " << gnu.cub[gnu.chosenIndex].getSideLength(3) << std::endl;
 
-                std::cout << "second sides: " << gnu.cub.getSideLength(4) << std::endl;
-                std::cout << "second sides: " << gnu.cub.getSideLength(5) << std::endl;
-                std::cout << "second sides: " << gnu.cub.getSideLength(6) << std::endl;
-                std::cout << "second sides: " << gnu.cub.getSideLength(7) << std::endl;
+                std::cout << "second sides: " << gnu.cub[gnu.chosenIndex].getSideLength(4) << std::endl;
+                std::cout << "second sides: " << gnu.cub[gnu.chosenIndex].getSideLength(5) << std::endl;
+                std::cout << "second sides: " << gnu.cub[gnu.chosenIndex].getSideLength(6) << std::endl;
+                std::cout << "second sides: " << gnu.cub[gnu.chosenIndex].getSideLength(7) << std::endl;
 
-                std::cout << "third sides: " << gnu.cub.getSideLength(8) << std::endl;
-                std::cout << "third sides: " << gnu.cub.getSideLength(9) << std::endl;
-                std::cout << "third sides: " << gnu.cub.getSideLength(10) << std::endl;
-                std::cout << "third sides: " << gnu.cub.getSideLength(11) << std::endl;
+                std::cout << "third sides: " << gnu.cub[gnu.chosenIndex].getSideLength(8) << std::endl;
+                std::cout << "third sides: " << gnu.cub[gnu.chosenIndex].getSideLength(9) << std::endl;
+                std::cout << "third sides: " << gnu.cub[gnu.chosenIndex].getSideLength(10) << std::endl;
+                std::cout << "third sides: " << gnu.cub[gnu.chosenIndex].getSideLength(11) << std::endl;
                 break;
             default:
                 std::cout << "unknown argument, pleas use correct arguments\n";
                 break;
         }
         std::cout << "You chose: '"<< c << "' (m-menu)\n";
-
-
     }
 }
 
@@ -122,12 +140,12 @@ void menuDisplay(){
   std::cout << "t - repeat the last rotation\n";
 }
 
-void getRotationMatrix(Cuboid<double> &cub, Matrix3x3 &rotMatrix, scene &gnu){
+void getRotationMatrix(scene &gnu){
     char ch;
     bool fail = false;
-    Cuboid<double> animateCuboid = cub;
-    Matrix rot = Matrix3x3 ();
-    rotMatrix = Matrix3x3();
+    Cuboid<double> oldCuboid = gnu.cub[gnu.chosenIndex];
+    Matrix rot = Matrix3x3();
+    gnu.rotMatrix = Matrix3x3();
     double degree;
     while(ch != '.'){
         std::cout << "give axis ann angle in degree\n";
@@ -155,8 +173,20 @@ void getRotationMatrix(Cuboid<double> &cub, Matrix3x3 &rotMatrix, scene &gnu){
                 throw std::exception();
             }
             rot = Matrix3x3(degree, ch);
-            gnu.animateRotateCuboid(animateCuboid, degree, ch);
-            rotMatrix = rot * rotMatrix;
+            gnu.animateRotateCuboid(degree, ch);
+            gnu.rotMatrix = rot * gnu.rotMatrix;
+
         }
     }
+    gnu.cub[gnu.chosenIndex] = oldCuboid;
+}
+
+void chooseIndex(scene &gnu){
+    int in;
+    std::cout << "chose Index of cuboid you want to operate\n(indexing from 0 to 4, dont screw it up !!!)\n";
+    std::cin >> in;
+    if(in > 4 || in < 0){
+        throw std::invalid_argument("index out of range. You screwed up ...");
+    }
+    gnu.chosenIndex = in;
 }
