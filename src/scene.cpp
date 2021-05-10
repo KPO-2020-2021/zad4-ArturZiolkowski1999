@@ -69,7 +69,7 @@ void scene::drawScene(){
             throw std::exception();
         }
         os << cub[i];
-        os << cub[i][0];
+//        os << cub[i][0];
         os.close();
     }
 
